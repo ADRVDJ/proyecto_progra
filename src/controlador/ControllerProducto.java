@@ -6,6 +6,8 @@
 package controlador;
 
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
@@ -129,6 +131,8 @@ public class ControllerProducto {
         this.vista.getLimpiarbuscadorPR().addActionListener(l -> limpiarbuscador());
         this.vista.getBuscarPR().addActionListener(l -> buscarproducto());
         this.vista.getMostrarPR().addActionListener(l -> buscarproducto());
+        this.vista.getGenerallt().addActionListener(l -> reporteGeneral());
+        this.vista.getInd().addActionListener(l -> reporteIndividual());
     }
 
     public void limpiar() {
@@ -179,6 +183,21 @@ public class ControllerProducto {
         this.vista.getTxtbuscarPR().setText("");
         modeloTablaProducto.setFilas(modeloProducto.findProductoEntities());
         modeloTablaProducto.fireTableDataChanged();
+    }
+
+    public void reporteGeneral() {
+        Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()), "/reportes/Producto.jasper", new HashMap());
+    }
+
+    public void reporteIndividual() {
+        if (producto != null) {
+            Map parameters = new HashMap();
+            parameters.put("id", producto.getIdproducto());
+            Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()), "/reportes/ind_producto.jasper", parameters);
+        } else {
+            Resouces.warning("Atencion!!", "Debe selecionar una persona");
+        }
+
     }
 
 }

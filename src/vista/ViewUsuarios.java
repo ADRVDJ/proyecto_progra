@@ -26,6 +26,14 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getReportesgenral() {
+        return reportesgenral;
+    }
+
+    public void setReportesgenral(JButton reportesgenral) {
+        this.reportesgenral = reportesgenral;
+    }
+
     public JButton getBtactualizarUS() {
         return btactualizarUS;
     }
@@ -59,11 +67,11 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
     }
 
     public JButton getBtimprimir() {
-        return btimprimir;
+        return btnReporteIndividualU;
     }
 
     public void setBtimprimir(JButton btimprimir) {
-        this.btimprimir = btimprimir;
+        this.btnReporteIndividualU = btimprimir;
     }
 
     public JButton getBtlimpiar() {
@@ -139,6 +147,14 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
         this.usuariotxt = usuariotxt;
     }
 
+    public JButton getBtnReporteIndividualU() {
+        return btnReporteIndividualU;
+    }
+
+    public void setBtnReporteIndividualU(JButton btnReporteIndividualU) {
+        this.btnReporteIndividualU = btnReporteIndividualU;
+    }
+
   
 
   
@@ -173,8 +189,8 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablausuario = new javax.swing.JTable();
-        btimprimir = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnReporteIndividualU = new javax.swing.JButton();
+        reportesgenral = new javax.swing.JButton();
         btcancelarUS = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -310,9 +326,9 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablausuario);
 
-        btimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-printer.png"))); // NOI18N
+        btnReporteIndividualU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-printer.png"))); // NOI18N
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/printed.png"))); // NOI18N
+        reportesgenral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/printed.png"))); // NOI18N
 
         btcancelarUS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cross.gif"))); // NOI18N
         btcancelarUS.setText("CANCELAR");
@@ -324,9 +340,9 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
             .addComponent(jScrollPane1)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(209, 209, 209)
-                .addComponent(btimprimir)
+                .addComponent(btnReporteIndividualU)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
+                .addComponent(reportesgenral)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btcancelarUS)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -342,8 +358,8 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
                         .addGap(1, 1, 1)
                         .addComponent(btcancelarUS, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btimprimir)
-                        .addComponent(jButton8)))
+                        .addComponent(btnReporteIndividualU)
+                        .addComponent(reportesgenral)))
                 .addGap(44, 44, 44))
         );
 
@@ -376,14 +392,13 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
     private javax.swing.JButton btactualizarUS;
     private javax.swing.JButton btcancelarUS;
     private javax.swing.JButton bteliminarUS;
-    private javax.swing.JButton btimprimir;
     private javax.swing.JButton btlimpiar;
+    private javax.swing.JButton btnReporteIndividualU;
     private javax.swing.JTextField buscartxt;
     private javax.swing.JCheckBox checkmos;
     private javax.swing.JComboBox<String> cmbopersona;
     private javax.swing.JPasswordField contraseñatxt;
     private javax.swing.JButton guardarUS;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -394,6 +409,7 @@ public class ViewUsuarios extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton limpFU;
+    private javax.swing.JButton reportesgenral;
     private javax.swing.JTable tablausuario;
     private javax.swing.JTextField usuariotxt;
     // End of variables declaration//GEN-END:variables

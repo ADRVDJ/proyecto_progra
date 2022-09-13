@@ -23,6 +23,30 @@ public class Viewpersona extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getReporteuni() {
+        return reporteuni;
+    }
+
+    public void setReporteuni(JButton reporteuni) {
+        this.reporteuni = reporteuni;
+    }
+
+    public JButton getReportebt() {
+        return reporteuni;
+    }
+
+    public void setReportebt(JButton reportebt) {
+        this.reporteuni = reportebt;
+    }
+
+    public JButton getReportegeneralbt() {
+        return reportegeneralbt;
+    }
+
+    public void setReportegeneralbt(JButton reportegeneralbt) {
+        this.reportegeneralbt = reportegeneralbt;
+    }
+
     public JTextField getTxtbuscar() {
         return txtbuscar;
     }
@@ -56,11 +80,11 @@ public class Viewpersona extends javax.swing.JInternalFrame {
     }
 
     public JButton getBtimprimir() {
-        return btimprimir;
+        return reporteuni;
     }
 
     public void setBtimprimir(JButton btimprimir) {
-        this.btimprimir = btimprimir;
+        this.reporteuni = btimprimir;
     }
 
     public JButton getLimpiarbuscador() {
@@ -204,8 +228,8 @@ public class Viewpersona extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablapersona = new javax.swing.JTable();
-        btimprimir = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        reporteuni = new javax.swing.JButton();
+        reportegeneralbt = new javax.swing.JButton();
         btcancelar = new javax.swing.JButton();
 
         setClosable(true);
@@ -292,11 +316,11 @@ public class Viewpersona extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(direccio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btguardar)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(editar)
                     .addComponent(eliminar)
-                    .addComponent(limpiar1))
+                    .addComponent(limpiar1)
+                    .addComponent(btguardar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -307,7 +331,6 @@ public class Viewpersona extends javax.swing.JInternalFrame {
         buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sear.png"))); // NOI18N
 
         limpiarbuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-clear.png"))); // NOI18N
-        limpiarbuscador.setActionCommand("");
 
         criterio.setText("MOSTRAR TODOS");
 
@@ -332,12 +355,12 @@ public class Viewpersona extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(23, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(limpiarbuscador)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(limpiarbuscador, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(criterio)))
+                        .addComponent(criterio))
+                    .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
@@ -362,9 +385,9 @@ public class Viewpersona extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablapersona);
 
-        btimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-printer.png"))); // NOI18N
+        reporteuni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-printer.png"))); // NOI18N
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/printed.png"))); // NOI18N
+        reportegeneralbt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/printed.png"))); // NOI18N
 
         btcancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cross.gif"))); // NOI18N
         btcancelar.setText("CANCELAR");
@@ -376,9 +399,9 @@ public class Viewpersona extends javax.swing.JInternalFrame {
             .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btimprimir)
+                .addComponent(reporteuni)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
+                .addComponent(reportegeneralbt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btcancelar)
                 .addGap(42, 42, 42))
@@ -388,12 +411,13 @@ public class Viewpersona extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btimprimir)
-                    .addComponent(jButton8)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(btcancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btcancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(reporteuni)
+                        .addComponent(reportegeneralbt)))
                 .addGap(22, 22, 22))
         );
 
@@ -428,7 +452,6 @@ public class Viewpersona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField apellido;
     private javax.swing.JButton btcancelar;
     private javax.swing.JButton btguardar;
-    private javax.swing.JButton btimprimir;
     private javax.swing.JButton buscar;
     private javax.swing.JTextField cedula;
     private javax.swing.JTextField celular;
@@ -437,7 +460,6 @@ public class Viewpersona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField direccio;
     private javax.swing.JButton editar;
     private javax.swing.JButton eliminar;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -452,6 +474,8 @@ public class Viewpersona extends javax.swing.JInternalFrame {
     private javax.swing.JButton limpiar1;
     private javax.swing.JButton limpiarbuscador;
     private javax.swing.JTextField nombre;
+    private javax.swing.JButton reportegeneralbt;
+    private javax.swing.JButton reporteuni;
     private javax.swing.JTable tablapersona;
     private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables

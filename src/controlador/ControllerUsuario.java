@@ -6,6 +6,8 @@
 package controlador;
 
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -83,6 +85,8 @@ public class ControllerUsuario {
         this.vista.getBtlimpiar().addActionListener(l -> limpiarbuscador());
         this.vista.getBotonbusqueda().addActionListener(l -> buscarusuario());
         this.vista.getCheckmos().addActionListener(l -> buscarusuario());
+        this.vista.getReportesgenral().addActionListener(l -> reporteGeneral());
+        this.vista.getBtnReporteIndividualU().addActionListener(l->reporteIndividual());
     }
 
     //GUARDAR PERSONA
@@ -182,12 +186,12 @@ public class ControllerUsuario {
             modelotabla.setFilas(modeloUsuario.findUsuarioEntities());
             modelotabla.fireTableDataChanged();
             limpiarbuscador();
-           // System.out.println("llego");
+            // System.out.println("llego");
         } else {
             if (!this.vista.getBuscartxt().getText().equals("")) {
                 modelotabla.setFilas(modeloUsuario.buscarusuario(this.vista.getBuscartxt().getText()));
                 modelotabla.fireTableDataChanged();
-              //  System.out.println("llego2");
+                //  System.out.println("llego2");
             } else {
 
             }
@@ -196,4 +200,18 @@ public class ControllerUsuario {
 
     }
 
+    public void reporteGeneral() {
+        Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()), "/reportes/Usuario.jasper", new HashMap());
+    }
+    
+     public void reporteIndividual(){
+     if (usuario != null) {
+         Map parameters = new HashMap();
+         parameters.put("id", usuario.getIdusuario());
+         Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()),"/reportes/individual.jasper" , parameters);
+     }else{
+         Resouces.warning("Atencion!!", "Debe selecionar un usuario");
+     }
+           
+ }
 }

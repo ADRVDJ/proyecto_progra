@@ -121,11 +121,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="direccio" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btguardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="editar" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="eliminar" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="limpiar1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btguardar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -237,13 +237,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace pref="23" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buscar" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="limpiarbuscador" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           <Component id="criterio" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="buscar" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
@@ -277,7 +277,6 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagenes/icon-clear.png"/>
             </Property>
-            <Property name="actionCommand" type="java.lang.String" value=""/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="criterio">
@@ -302,9 +301,9 @@
               <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btimprimir" min="-2" max="-2" attributes="0"/>
+                  <Component id="reporteuni" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                  <Component id="reportegeneralbt" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btcancelar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
@@ -316,12 +315,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" pref="359" max="-2" attributes="0"/>
                   <EmptySpace pref="27" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btimprimir" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Component id="btcancelar" min="-2" pref="41" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="reporteuni" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="reportegeneralbt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -356,14 +357,14 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btimprimir">
+        <Component class="javax.swing.JButton" name="reporteuni">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagenes/icon-printer.png"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="reportegeneralbt">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagenes/printed.png"/>

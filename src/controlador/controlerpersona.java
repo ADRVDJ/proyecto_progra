@@ -5,6 +5,8 @@
  */
 package controlador;
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import modelo.Persona;
 import modelo.PersonaJpaController;
@@ -132,6 +134,8 @@ ModeloTablaPersona modeloTablaPersona;
         this.vista.getLimpiar2().addActionListener(l -> limpiarbuscador());
         this.vista.getBuscar().addActionListener(l -> buscarpersona());
         this.vista.getCriterio().addActionListener(l -> buscarpersona());
+        this.vista.getReportegeneralbt().addActionListener(l -> reporteGeneral());
+        this.vista.getReporteuni().addActionListener(l -> reporteIndividual());
     }
 
     public void limpiar() {
@@ -185,4 +189,20 @@ ModeloTablaPersona modeloTablaPersona;
         modeloTablaPersona.setFilas(modeloPersona.findPersonaEntities());
         modeloTablaPersona.fireTableDataChanged();
     }
+    public void reporteGeneral() {
+       
+        Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()), "/reportes/Personas.jasper", new HashMap());
+    }
+    
+ public void reporteIndividual(){
+     if (persona != null) {
+         Map parameters = new HashMap();
+         parameters.put("id", persona.getIdpersona());
+         Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()),"/reportes/ind_persona.jasper" , parameters);
+     }else{
+         Resouces.warning("Atencion!!", "Debe selecionar una persona");
+     }
+           
+ }   
+    
 }

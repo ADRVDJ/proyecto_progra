@@ -23,6 +23,23 @@ public class ViewProductos extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getInd() {
+        return ind;
+    }
+
+    public void setInd(JButton ind) {
+        this.ind = ind;
+    }
+
+    public JButton getGenerallt() {
+        return generallt;
+    }
+
+    public void setGenerallt(JButton generallt) {
+        this.generallt = generallt;
+    }
+    
+
     public JButton getEliminarPR() {
         return eliminarPR;
     }
@@ -48,11 +65,11 @@ public class ViewProductos extends javax.swing.JInternalFrame {
     }
 
     public JButton getBtimprimirPR() {
-        return btimprimirPR;
+        return ind;
     }
 
     public void setBtimprimirPR(JButton btimprimirPR) {
-        this.btimprimirPR = btimprimirPR;
+        this.ind = btimprimirPR;
     }
 
     public JButton getBuscarPR() {
@@ -80,11 +97,11 @@ public class ViewProductos extends javax.swing.JInternalFrame {
     }
 
     public JButton getjButton8PR() {
-        return jButton8PR;
+        return generallt;
     }
 
     public void setjButton8PR(JButton jButton8PR) {
-        this.jButton8PR = jButton8PR;
+        this.generallt = jButton8PR;
     }
 
     public JButton getLimpiar1PR() {
@@ -172,8 +189,8 @@ public class ViewProductos extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaproducto = new javax.swing.JTable();
-        btimprimirPR = new javax.swing.JButton();
-        jButton8PR = new javax.swing.JButton();
+        ind = new javax.swing.JButton();
+        generallt = new javax.swing.JButton();
         btcancelarPR = new javax.swing.JButton();
 
         setClosable(true);
@@ -305,9 +322,9 @@ public class ViewProductos extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablaproducto);
 
-        btimprimirPR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-printer.png"))); // NOI18N
+        ind.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-printer.png"))); // NOI18N
 
-        jButton8PR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/printed.png"))); // NOI18N
+        generallt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/printed.png"))); // NOI18N
 
         btcancelarPR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cross.gif"))); // NOI18N
         btcancelarPR.setText("CANCELAR");
@@ -319,9 +336,9 @@ public class ViewProductos extends javax.swing.JInternalFrame {
             .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btimprimirPR)
+                .addComponent(ind)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8PR)
+                .addComponent(generallt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btcancelarPR)
                 .addGap(42, 42, 42))
@@ -336,8 +353,8 @@ public class ViewProductos extends javax.swing.JInternalFrame {
                         .addGap(1, 1, 1)
                         .addComponent(btcancelarPR, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btimprimirPR)
-                        .addComponent(jButton8PR)))
+                        .addComponent(ind)
+                        .addComponent(generallt)))
                 .addGap(22, 22, 22))
         );
 
@@ -372,12 +389,12 @@ public class ViewProductos extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btcancelarPR;
     private javax.swing.JButton btguardarPR;
-    private javax.swing.JButton btimprimirPR;
     private javax.swing.JButton buscarPR;
     private javax.swing.JTextField cantidadPrtxt;
     private javax.swing.JButton editarPR;
     private javax.swing.JButton eliminarPR;
-    private javax.swing.JButton jButton8PR;
+    private javax.swing.JButton generallt;
+    private javax.swing.JButton ind;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
