@@ -86,7 +86,7 @@ public class ControllerUsuario {
         this.vista.getBotonbusqueda().addActionListener(l -> buscarusuario());
         this.vista.getCheckmos().addActionListener(l -> buscarusuario());
         this.vista.getReportesgenral().addActionListener(l -> reporteGeneral());
-        this.vista.getBtnReporteIndividualU().addActionListener(l->reporteIndividual());
+        this.vista.getBtnReporteIndividualU().addActionListener(l -> reporteIndividual());
     }
 
     //GUARDAR PERSONA
@@ -203,15 +203,15 @@ public class ControllerUsuario {
     public void reporteGeneral() {
         Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()), "/reportes/Usuario.jasper", new HashMap());
     }
-    
-     public void reporteIndividual(){
-     if (usuario != null) {
-         Map parameters = new HashMap();
-         parameters.put("id", usuario.getIdusuario());
-         Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()),"/reportes/individual.jasper" , parameters);
-     }else{
-         Resouces.warning("Atencion!!", "Debe selecionar un usuario");
-     }
-           
- }
+
+    public void reporteIndividual() {
+        if (usuario != null) {
+            Map parameters = new HashMap();
+            parameters.put("id", usuario.getIdusuario());
+            Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()), "/reportes/individual.jasper", parameters);
+        } else {
+            Resouces.warning("Atencion!!", "Debe selecionar un usuario");
+        }
+
+    }
 }
