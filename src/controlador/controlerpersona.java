@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controlador;
+
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +26,7 @@ import vista.Viewpersona;
  */
 public class controlerpersona {
 
-ModeloTablaPersona modeloTablaPersona;
+    ModeloTablaPersona modeloTablaPersona;
     Viewpersona vista;
     managerfactory manage;
     PersonaJpaController modeloPersona;
@@ -89,10 +90,8 @@ ModeloTablaPersona modeloTablaPersona;
                 modeloTablaPersona.actualizar(persona);
                 limpiar();
             } catch (Exception ex) {
-                java.util.logging.Logger.getLogger(controlerpersona
-
-.class
-.getName()).log(Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(controlerpersona.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -103,10 +102,8 @@ ModeloTablaPersona modeloTablaPersona;
                 modeloPersona.destroy(persona.getIdpersona());
                 limpiar();
             } catch (NonexistentEntityException ex) {
-                java.util.logging.Logger.getLogger(controlerpersona
-
-.class
-.getName()).log(Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(controlerpersona.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             modeloTablaPersona.eliminar(persona);
             JOptionPane.showMessageDialog(panelEscritorio, "PERSONA ELIMINADA CORRECTAMENTE");
@@ -189,20 +186,21 @@ ModeloTablaPersona modeloTablaPersona;
         modeloTablaPersona.setFilas(modeloPersona.findPersonaEntities());
         modeloTablaPersona.fireTableDataChanged();
     }
+
     public void reporteGeneral() {
-       
+
         Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()), "/reportes/Personas.jasper", new HashMap());
     }
-    
- public void reporteIndividual(){
-     if (persona != null) {
-         Map parameters = new HashMap();
-         parameters.put("id", persona.getIdpersona());
-         Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()),"/reportes/ind_persona.jasper" , parameters);
-     }else{
-         Resouces.warning("Atencion!!", "Debe selecionar una persona");
-     }
-           
- }   
-    
+
+    public void reporteIndividual() {
+        if (persona != null) {
+            Map parameters = new HashMap();
+            parameters.put("id", persona.getIdpersona());
+            Resouces.imprimirReeporte(managerfactory.getConnection(manage.getentityManagerFactory().createEntityManager()), "/reportes/ind_persona.jasper", parameters);
+        } else {
+            Resouces.warning("Atencion!!", "Debe selecionar una persona");
+        }
+
+    }
+
 }

@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import modelo.Persona;
-import modelo.PersonaJpaController;
 import modelo.Producto;
 import modelo.ProductoJpaController;
 import modelo.exceptions.NonexistentEntityException;
